@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import logoImg from '../../assets/images/logo.png';
 import './index.less';
 import LeftNav from '../../components/left-nav';
+import HeaderMain from '../../components/header-main'
 const { Header, Content, Footer, Sider } = Layout;
 export default class Admin extends Component {
   state = {
@@ -58,14 +59,16 @@ export default class Admin extends Component {
             <img src={logoImg} alt="logo"/>
             <h1 style={{display:isDisplay}}>硅谷后台</h1>
           </Link>
-          <LeftNav/>
+          <LeftNav/>{/*左边导航*/}
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
+          <Header style={{ marginBottom: 40, padding: 0 }} >{/*头部*/}
+            <HeaderMain/>
+          </Header>
+          <Content style={{ margin: '0 16px' }}>{/*内容区*/}
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>{/*底部*/}
         </Layout>
       </Layout>
     );

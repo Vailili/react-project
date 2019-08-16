@@ -4,11 +4,11 @@ function getItem() {
 function setItem(user) {
   localStorage.setItem('user',JSON.stringify(user));
 }
-/*function removeItem() {
+function removeItem() {
   localStorage.removeItem('user');
-}*/
+}
 export {
   getItem,
   setItem,
-  //removeItem
+  removeItem
 }
