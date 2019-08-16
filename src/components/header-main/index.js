@@ -7,6 +7,18 @@ import './index.less';
 
 const { confirm } = Modal;
 class HeaderMain extends Component {
+  state = {
+    systemTime: ''
+  };
+  componentDidMount() {
+    setInterval(()=>{
+      const now =new Date();
+      const time = now.getFullYear()+'/'+(now.getMonth()+1)+'/'+now.getDate()+' '+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+      this.setState({
+        systemTime: time
+      });
+    },1000);
+  }
   logout = () => {
     confirm({
       title: '你是否要退出登录?',
@@ -29,7 +41,7 @@ class HeaderMain extends Component {
       <div className="header-content-bottom">
         <h3 className="header-bottom-left">管理11</h3>
         <div className="header-bottom-right">
-          <span>111111</span>
+          <span>{this.state.systemTime}</span>
           <img src="http://api.map.baidu.com/images/weather/day/qing.png" alt="weather"/>
           <span>晴转多云</span>
         </div>
